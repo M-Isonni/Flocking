@@ -8,7 +8,6 @@
 #include "FlockingWorldSubsystem.generated.h"
 
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE(FAvoidablesDelegate);
 /**
  * 
  */
@@ -21,7 +20,5 @@ public:
 		TArray<AActor*> Avoidables;
 		void AddAvoidable(AAvoidable*);
 		void RemoveAvoidable(AAvoidable*);
-//private:
-//		static void ModifyAvoidablesArray();
 	
 };

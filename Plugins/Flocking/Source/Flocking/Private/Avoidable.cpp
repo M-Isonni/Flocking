@@ -18,7 +18,11 @@ AAvoidable::AAvoidable()
 void AAvoidable::BeginPlay()
 {
 	Super::BeginPlay();
-	FSub->AddAvoidable(this);
+	FSub = GetWorld()->GetSubsystem<UFlockingWorldSubsystem>();
+	if (FSub)
+	{
+		FSub->AddAvoidable(this);
+	}
 }
 
 // Called every frame

@@ -5,17 +5,13 @@
 #include "Runtime/Engine/Classes/Kismet/GameplayStatics.h"
 
 
-//void UFlockingWorldSubsystem::ModifyAvoidablesArray()
-//{
-//	UGameplayStatics::GetAllActorsOfClass(GetWorld(), AAvoidable::StaticClass(), Avoidables);
-//}
 
-void UFlockingWorldSubsystem::AddAvoidable(class AAvoidable* avoidable)
+void UFlockingWorldSubsystem::AddAvoidable(AAvoidable* avoidable)
 {
 	Avoidables.Add(avoidable);
 }
 
-void UFlockingWorldSubsystem::RemoveAvoidable(class AAvoidable* avoidable)
+void UFlockingWorldSubsystem::RemoveAvoidable(AAvoidable* avoidable)
 {
 	Avoidables.Remove(avoidable);
 }

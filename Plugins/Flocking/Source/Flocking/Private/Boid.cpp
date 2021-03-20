@@ -188,10 +188,12 @@ FVector ABoid::Avoid()
 	FVector new_dir = FVector::ZeroVector;
 	if (!FSub)
 	{
+		if (GEngine)
+			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Subsystem not found!"));
 		return new_dir;
 	}
 	if (!bIsAvoiding)
-	{
+	{		
 		Forward = GetActorForwardVector();
 		Right = GetActorRightVector();
 		Up = GetActorUpVector();
