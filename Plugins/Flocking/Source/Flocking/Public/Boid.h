@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-//#include "AvoidablesManager.h"
 #include "Boid.generated.h"
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDelegate);
