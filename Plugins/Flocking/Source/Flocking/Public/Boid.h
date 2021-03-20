@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+//#include "AvoidablesManager.h"
 #include "Boid.generated.h"
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDelegate);
@@ -89,9 +90,9 @@ public:
 
 private:
 	class UFlockingWorldSubsystem* FSub;
-	bool Timing = false;
-	bool IsStraying = false;
-	bool IsAvoiding;
+	bool bTiming = false;
+	bool bIsStraying = false;
+	bool bIsAvoiding;
 	int32 TargetIndex = 0;
 	float BackMul = 1;
 	float CasulAngle = 0;

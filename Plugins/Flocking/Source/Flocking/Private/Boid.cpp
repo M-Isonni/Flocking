@@ -77,11 +77,11 @@ FVector ABoid::Flock(TArray<AActor*> neighbours_array, float deltaTime)
 	/*float delta_mul = GetDistanceMultiplier()*/;
 
 	float mul = 1;
-	if (IsStraying)
+	if (bIsStraying)
 	{
 		mul = -1;
 	}
-	if (!IsAvoiding)
+	if (!bIsAvoiding)
 	{
 		Lerping = 0.0f;
 	}
@@ -190,7 +190,7 @@ FVector ABoid::Avoid()
 	{
 		return new_dir;
 	}
-	if (!IsAvoiding)
+	if (!bIsAvoiding)
 	{
 		Forward = GetActorForwardVector();
 		Right = GetActorRightVector();
@@ -199,7 +199,7 @@ FVector ABoid::Avoid()
 	if (FSub->Avoidables.Num() > 0)
 	{
 		float mul = 1;
-		IsAvoiding = false;
+		bIsAvoiding = false;
 		int32 count = 0;
 		for (AActor* a : FSub->Avoidables)
 		{
@@ -215,7 +215,7 @@ FVector ABoid::Avoid()
 				n_dir = FVector(a->GetActorLocation().X, dir.Y, dir.Z);
 				n_dir.Normalize();
 				OldDistance = FLT_MAX;
-				IsStraying = false;
+				bIsStraying = false;
 				/*CasulAngle = FMath::FRandRange(0, 90);
 				Randomic = FVector::ZeroVector;*/
 			}
@@ -245,9 +245,9 @@ FVector ABoid::Avoid()
 				}
 				//new_dir += Randomic;
 				//new_dir.Normalize();
-				IsStraying = IsObstacleStraying(a, OldDistance);
+				bIsStraying = IsObstacleStraying(a, OldDistance);
 				OldDistance = (a->GetActorLocation() - Location).Size();
-				IsAvoiding = true;
+				bIsAvoiding = true;
 			}
 		}
 		if (count > 0)
@@ -300,7 +300,7 @@ FVector ABoid::MoveToTarget(float deltaTime)
 {
 	if (Targets.Num() > 0)
 	{
-		if (Timing)
+		if (bTiming)
 		{
 			Time -= deltaTime;
 		}
@@ -309,7 +309,7 @@ FVector ABoid::MoveToTarget(float deltaTime)
 		target_dir.Normalize();
 		if (distance <= TargetAvoidanceRadius && BackMul == 1)
 		{
-			Timing = true;
+			bTiming = true;
 			BackMul = -1;
 			CasulAngle = FMath::FRandRange(-MaxRandomicAngle, MaxRandomicAngle);
 			Randomic = FVector::CrossProduct(target_dir, GetActorUpVector()) * sin(CasulAngle);
@@ -327,7 +327,7 @@ FVector ABoid::MoveToTarget(float deltaTime)
 			{
 				TargetIndex = 0;
 			}
-			Timing = false;
+			bTiming = false;
 			Time = TargetTimeAround;
 			OnTargetTimeExpire.Broadcast();
 		}
