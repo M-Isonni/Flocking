@@ -1,0 +1,14 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-Flocking.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\Massimo\Desktop\Flocking\HostProject\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"C:\Users\Massimo\Desktop\Flocking\HostProject\Plugins\Flocking\Intermediate\Build\Win64\UE4Editor\Development\Flocking\Module.Flocking.cpp.obj"
+"C:\Users\Massimo\Desktop\Flocking\HostProject\Plugins\Flocking\Intermediate\Build\Win64\UE4Editor\Development\Flocking\Module.Flocking.gen.cpp.obj"
+"C:\Users\Massimo\Desktop\Flocking\HostProject\Plugins\Flocking\Intermediate\Build\Win64\UE4Editor\Development\Flocking\Default.rc2.res"
+/OUT:"C:\Users\Massimo\Desktop\Flocking\HostProject\Plugins\Flocking\Intermediate\Build\Win64\UE4Editor\Development\Flocking\UE4Editor-Flocking.lib"
+/INCLUDE:IMPLEMENT_MODULE_Flocking

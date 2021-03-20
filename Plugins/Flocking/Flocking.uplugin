@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "Flocking",
+	"Description": "Plugin to manage flocks of boids",
+	"Category": "Other",
+	"CreatedBy": "Massimo",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": true,
+	"IsExperimentalVersion": false,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "Flocking",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}
